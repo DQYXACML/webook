@@ -4,11 +4,11 @@ import (
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"signup_issue/webook/config"
-	"signup_issue/webook/internal/repository"
-	"signup_issue/webook/internal/repository/dao"
-	"signup_issue/webook/internal/service"
-	"signup_issue/webook/internal/web"
+	"webook/config"
+	"webook/internal/repository"
+	"webook/internal/repository/dao"
+	"webook/internal/service"
+	"webook/internal/web"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 	r := initWebServer()
 	u := initUser(db)
 	u.RegisterRoutes(r)
-	err := r.Run(":8081")
+	err := r.Run(":8080")
 	if err != nil {
 		panic("端口启动失败")
 	}
